@@ -970,7 +970,7 @@ $(window).scroll( function() {
     }
     resizeTimeout = setTimeout(function() {
       let prevState = isFixed;
-      $(this).scrollTop() > 1 ? isFixed = true : isFixed = false;
+      $(this).scrollTop() > 0 ? isFixed = true : isFixed = false;
       if( prevState != isFixed && isFixed == true ){
           $("header").addClass("fixed-navbar");
           $("header").removeClass("absolute");
