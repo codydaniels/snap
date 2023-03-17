@@ -1,8 +1,8 @@
 ---
 layout: home.njk
 permalink: /
-title: Powerplay DJ
-description: Book your next event with PowerplayDJ
+title: Snap - Energy Solutions
+description: .
 header:
   text: Header Text
 ---
