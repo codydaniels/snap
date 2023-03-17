@@ -961,23 +961,27 @@
 
 
 
-var resizeTimeout;
+var timer = 0;
 var isFixed = false;
 $(window).scroll( function() {
-
-    if (resizeTimeout) {
-      clearTimeout(resizeTimeout);
+  console.log(timer)
+    if(timer == 0){
+      timer = setTimeout(function() {
+        console.log("fire")
+        let prevState = isFixed;
+        $(window).scrollTop() > 0 ? isFixed = true : isFixed = false;
+        if( prevState != isFixed && isFixed == true ){
+            $("header").addClass("fixed-navbar");
+            $("header").removeClass("absolute");
+        } else if (prevState != isFixed) {
+            $("header").addClass("absolute");
+            $("header").removeClass("fixed-navbar");
+        }
+        timer = 0;
+      }, 100);
+    }else{
+      
     }
-    resizeTimeout = setTimeout(function() {
-      let prevState = isFixed;
-      $(this).scrollTop() > 0 ? isFixed = true : isFixed = false;
-      if( prevState != isFixed && isFixed == true ){
-          $("header").addClass("fixed-navbar");
-          $("header").removeClass("absolute");
-      } else if (prevState != isFixed) {
-          $("header").addClass("absolute");
-          $("header").removeClass("fixed-navbar");
-      }
-    }, 100);
+
 
 });
