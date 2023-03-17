@@ -1,0 +1,3 @@
+{%- for contact_partial in collections.contact_partial -%}
+   {% encryptShortCode contact_partial.data.email.personal %}
+{%- endfor -%}

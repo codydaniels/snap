@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: main
+logo_url: "/assets/icons/logo-powerplay-dj-admin-panel.png"
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "src/assets/images/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/assets/images/uploads"
+collections:
+  - name: "home"
+    label: "Home"
+    folder: "src/home"
+    create: false # Change to true to allow editors to create new pages
+    slug: "{{slug}}"
+    sortable_fields: ["title"]
+    summary: "Home page"
+    hint: '&emsp;All home page content'
+    preview_path: '/'
+    fields: # The fields for each document, usually in front matter
+      - {label: "Tab Title (SEO)", name: "title", widget: "string", hint: '&emsp;Title for the the entire page'}
+      - {label: "Page Description (SEO)", name: "description", widget: "string", hint: '&emsp;Brief description to be shown in search'}
+      - label: "Header"
+        name: "header"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: Text", name: "text", widget: "string"}
+
+  - name: "about"
+    label: "About"
+    folder: "src/about"
+    create: false # Change to true to allow editors to create new pages
+    slug: "{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      
+  - name: "contact_partial"
+    label: "Partial - Contact Form"
+    folder: "src/contact"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Call to Action", name: "cta", widget: "string"}
+      - {label: "Image", name: "img", widget: "image"}
+      - {label: "Image Description (SEO)", name: "alt", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - label: "Emails"
+        name: "email"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Personal Email", name: "personal", widget: "string"}
+          - {label: "General Email", name: "general", widget: "string"}
+      - {label: "Phone", name: "phone", widget: "string"}
+      - label: "Addresses"
+        name: "address"
+        widget: "object"
+        collapsed: true
+        fields:
+          - {label: "Fargo", name: "fargo", widget: "text"}
+          - {label: "Bismark", name: "bismark", widget: "text"}
+
+
+  - name: "menu1" # Used in routes, e.g., /admin/collections/menu1
+    label: "Menu1" # Used in the UI
+    folder: "src/menu1" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Display Order", name: "order", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["post"]}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Image caption", name: "imageAlt", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "review" # Used in routes, e.g., /admin/collections/review
+    label: "Review" # Used in the UI
+    folder: "src/review" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Display Order", name: "order", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}

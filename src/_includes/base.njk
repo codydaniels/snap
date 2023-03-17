@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    {# <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Tailwind CSS Template</title>
+    <meta name="title" content="Startup Tailwind | Startup Web Template for Tailwind CSS" />
+    <meta
+      name="description"
+      content="Startup Tailwind is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites. Comes with all essential components and pages you need to kickstart your SaaS websites."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://startup-tailwind.preview.uideck.com/" />
+    <meta property="og:title" content="Startup Tailwind | SaaS Web Template for Tailwind CSS" />
+    <meta
+      property="og:description"
+      content="Startup Tailwind is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites. Comes with all essential components and pages you need to kickstart your SaaS websites."
+    />
+    <meta property="og:image" content="#" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saas-tailwind.preview.uideck.com/" />
+    <meta property="twitter:title" content="Startup Tailwind | SaaS Web Template for Tailwind CSS" />
+    <meta
+      property="twitter:description"
+      content="Startup Tailwind is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites. Comes with all essential components and pages you need to kickstart your SaaS websites."
+    />
+    <meta property="twitter:image" content="#" /> #}
+
+
+  {# Load tracking codes #}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {# Social media metadata #}
+  <meta property="og:url" content="https://TODO.com{{ page.url }}">
+  <meta property="og:site_name" content="TODO">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://TODO.com{{ image }}">
+  <meta name="twitter:image:alt" content="{{ image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {# Browser tab #}
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+  {# CSS #}
+  <style>
+    /*Prevent unstyled content flash*/
+    html{ visibility:hidden; opacity:0; }
+    /*Load fonts without chained requests*/
+    @font-face {
+      font-family: 'Rubik';
+      src: url('/assets/fonts/rubik.ttf');
+      font-style: normal;
+      font-stretch: normal;
+    }
+    {# @font-face {
+      font-family: 'Open Sans Italic';
+      src: url('/assets/fonts/OpenSans-Italic.ttf');
+      font-style: italic;
+      font-stretch: normal;
+    } #}
+  </style>
+  {# <link rel="stylesheet" href="/css/theme.css"> #}
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" integrity="sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  {# GSAP and (jQuery loaded manually) CDNs #}
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous" defer></script>
+  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" defer></script>  #}
+
+  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> #}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js" integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.js" integrity="sha512-B15xrHLAFUGC5w4jO8iQtCLLaliORCeLUCewc3Pjrtzw6y2ZXECO6bHalENItF5p/yPpz02fGL/luT/Bs17WnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.js" integrity="sha512-B15xrHLAFUGC5w4jO8iQtCLLaliORCeLUCewc3Pjrtzw6y2ZXECO6bHalENItF5p/yPpz02fGL/luT/Bs17WnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> #}
+
+  {# Load Netlify Identity for Admin page only #}
+  {{ '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>' if '/admin' in page.url }}
+</head>
+
+<body class="dark:bg-black" x-data={'darkMode': true}>
+
+  {# Check current browser size with a media query, for Javascript #}
+  {# <div id="getSize"></div> #}
+{# 
+  <div class="w-full max-w-ult">
+    {% include "header.njk" %} #}
+    {{ content | safe }}
+    {# {% include "footer.njk" %}
+  </div> #}
+
+  <!-- ====== All Scripts -->
+  <script>
+    // ==== pricing plan toggler
+    let togglePlan = document.querySelector('#togglePlan');
+    document.querySelector('.monthly').addEventListener('click', () => {
+      togglePlan.checked = false;
+    });
+    document.querySelector('.yearly').addEventListener('click', () => {
+      togglePlan.checked = true;
+    });
+    // ==== for menu scroll
+    const pageLink = document.querySelectorAll('.menu-scroll');
+    pageLink.forEach((elem) => {
+      elem.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(elem.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          offsetTop: 1 - 60,
+        });
+      });
+    });
+    // section menu active
+    function onScroll(event) {
+      const sections = document.querySelectorAll('.menu-scroll');
+      const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      for (let i = 0; i < sections.length; i++) {
+        const currLink = sections[i];
+        const val = currLink.getAttribute('href');
+        const refElement = document.querySelector(val);
+        const scrollTopMinus = scrollPos + 73;
+        if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
+          document.querySelector('.menu-scroll').classList.remove('active');
+          currLink.classList.add('active');
+        } else {
+          currLink.classList.remove('active');
+        }
+      }
+    }
+    window.document.addEventListener('scroll', onScroll);
+  </script>
+  <script src="/all.js" async defer></script>
+  {{ '<script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>' if '/admin' in page.url }}
+
+</body>
+
+</html>

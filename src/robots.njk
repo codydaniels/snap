@@ -1,0 +1,13 @@
+---
+permalink: '/robots.txt'
+eleventyExcludeFromCollections: true
+---
+
+User-agent: *
+Disallow: /admin/
+Disallow: /confirmed/
+Disallow: /done/
+
+Sitemap: {{page.url}}/sitemap.xml
+
+<!-- TODO: test if page.url works here-->

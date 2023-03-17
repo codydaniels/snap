@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerPlay DJ - Admin </title>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <script src="/nunjucks.min.js"></script>
+  
+</head>
+
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <!-- To convert markdown content to html -->
+  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+  <!-- Add css stylesheet -->
+  <script>
+ 
+    CMS.registerPreviewStyle("/css/style.css");
+  </script>
+
+  <script defer>
+  
+    var HomePreview = createClass({
+      render: function () {
+        const entry = this.props.entry;
+        const json = entry.getIn(["data"]).toJS()
+        
+        $.get("/home.njk", function(njk){
+          
+          //--Remove imageShortCode--//
+          //Setup while loop for regex
+          var regexImg = /{%(?:.*)imageShortCode(.*)%}/g;
+          let njkImg
+          let i=0
+          while ( njkImg = regexImg.exec(njk)) {
+            let items = njkImg[1].split(",");
+            for (let j = 0; j < items.length; j++) {
+              if (items[j].includes(`'`) || items[j].includes(`"`)){
+                //Is a string
+              }else{
+                let itemValue = items[j].match(/\:(.*)/g)
+                itemValue = itemValue[0].replace(`:`,"").replace(" ","")
+                items[j] = items[j].replace(/\:(.*)/g,`: json.${itemValue}`)
+              }
+            }
+            let cleanItems = items.join(",")
+            let imgObject
+            eval(`imgObject = ${cleanItems}`);
+            let imgHTML = `<img class="${imgObject.className}" src="${imgObject.imgSrc}">`
+            njk = njk.replace(njkImg[0], imgHTML)
+            console.log("new njk"+njk)
+            i++
+          }
+        
+          //--Remove Frontmatter--//
+          var regexFrontMatter = /---((.|\n)*)---/g;
+          njk = njk.replace(regexFrontMatter,"");
+        
+          //--Remove other 11ty itmes like includes--//
+          var regexAll = /{%(.*)%}/g;
+          var njkClean = njk.replace(regexAll,"[item removed]");
+          window.HTML = nunjucks.compile(njkClean).render(json)
+          
+        },'html') 
+
+        return h('div', {
+          dangerouslySetInnerHTML: { __html: window.HTML}
+        })
+      }
+    });
+
+    //3. Apply Custom Previews
+    CMS.registerPreviewTemplate("home", HomePreview);
+
+    //Load animations
+  </script>
+
+    <!--DONT LOAD ANIMATONS-->
+  <!-- <script src="/all.js"></script> -->
+</body>
+
+</html>

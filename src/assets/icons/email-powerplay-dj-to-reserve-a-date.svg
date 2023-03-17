@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="21.5"
+   height="18.5"
+   viewBox="0 0 21.5 18.5"
+   fill="none"
+   version="1.1"
+   id="svg101"
+   sodipodi:docname="Property 1=vuesax, Property 2=linear, Property 3=sms.svg"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs105" />
+  <sodipodi:namedview
+     id="namedview103"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="29.958333"
+     inkscape:cx="10.764951"
+     inkscape:cy="12.834492"
+     inkscape:window-width="1296"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="1105"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg101" />
+  <path
+     d="m 15.75,17.75 h -10 c -3,0 -5,-1.5 -5,-5 v -7 c 0,-3.5 2,-5 5,-5 h 10 c 3,0 5,1.5 5,5 v 7 c 0,3.5 -2,5 -5,5 z"
+     stroke="white"
+     stroke-width="1.5"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path97" />
+  <path
+     d="m 15.75,6.25 -3.13,2.5 C 11.59,9.57 9.9,9.57 8.87,8.75 L 5.75,6.25"
+     stroke="white"
+     stroke-width="1.5"
+     stroke-miterlimit="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path99" />
+</svg>

@@ -1,0 +1,9 @@
+{%- for contact_partial in collections.contact_partial -%}
+  <section>
+
+    Contact Partial
+    <div class="js unencrypt">{% include "contact-encrypted-email.njk" %}</div>
+    <div class="js unencrypt">{% include "contact-encrypted-phone.njk" %}</div>
+
+  </section>
+{%- endfor -%}

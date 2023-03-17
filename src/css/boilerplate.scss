@@ -1,0 +1,167 @@
+// $sm:  640px;
+// $md:  768px;
+// $lg:  1024px;
+// $xl:  1280px;
+// $xxl: 1536px;
+// $max: 1600px;
+// $ult: 2800px;
+
+// //-- Variables --//
+// :root{
+//   --white: #ffffff;
+//   --black: #030102;
+//   --charcoal: #151517;
+//   --blue: #7FEEF0;
+//   --purple: #AB4CB4;
+//   --gray: #BDBDBD;
+// }
+
+// // Breakpoints as animation-names for javascriopt
+// #getSize{ 
+//   animation-name: sm;
+//   display:none;
+// }
+// @media screen and (min-width: $md ){ #getSize{animation-name:md; } }
+// @media screen and (min-width: $lg ){ #getSize{animation-name:lg; } }
+// @media screen and (min-width: $xl ){ #getSize{animation-name:xl; } }
+// @media screen and (min-width: $xxl){ #getSize{animation-name:xxl;} }
+
+
+// //-- HTML default overrides --//
+// *{ box-sizing: border-box; }
+
+// body{ 
+//   background-color: var(--black);
+//   color: var(--white);
+//   font-family: "Open Sans";
+// }
+
+// h1, h2, h3, h4, h5, h6{
+//   letter-spacing: 0.05em;
+//   font-weight:600;
+// }
+// h1{ 
+//   font-size: clamp(32px,6vw,72px);
+//   line-height: clamp(48px,10vw,88px);
+// }
+// h2{ font-size: clamp(28px, 4vw, 40px); }
+// h3{ font-size: clamp(22px, 3vw, 28px); }
+// input {  color-scheme: dark; }
+// img{
+//   max-width:100%;
+//   //width:100%;
+// }
+
+// //-- Additional utility classes --//
+// .max-w{ max-width: $max; }
+// .max-w-ult{ max-width: $ult; }
+// @media screen and (min-width: $ult){
+//   .ult-block{ display:block }
+// }
+// .accessibly-hidden{
+//   position:absolute;
+//   transform:scale(0);
+// }
+
+
+// //-- General Components --//
+// button, .btn{
+//   padding: .75rem;
+//   color: white;
+//   border: solid 2px white;
+//   border-radius: 8px;
+//   *{ cursor:pointer; }
+// }
+// button:hover, .btn:hover{
+//   // @extend .fade-opacity-_6;
+//   cursor:pointer;
+// }
+// .cta-btn{
+//   @extend .btn;
+//   @extend .box-shadow-glow;
+//   @extend .pulse;
+//   padding: .75rem 2rem;
+//   background: var(--blue);
+//   color:var(--black);
+//   border: none;
+// }
+// .hover-opacity-up{ 
+//   opacity: .7;
+//   transition: opacity .5s;
+//  }
+// .hover-opacity-up:hover{ opacity: 1 }
+// .hover-opacity-down{ 
+//   opacity: 1;
+//   transition: opacity .5s;
+//  }
+// .hover-opacity-down:hover{ opacity: .7 }
+// .hover-line, .active-line{
+//   cursor: pointer;
+//   overflow: hidden;
+//   .line{
+//     height:1px;
+//     background-color: var(--white);
+//     width:100%;
+//     transform:translateX(-100%);
+//     transition: transform .5s;
+//   }
+// }
+// .hover-line.active{
+//   .line{ transform:translateX(0%) }
+// }
+// .hover-line:hover{
+//   .line{ transform:translateX(0%) }
+// }
+// .active-line.active{
+//   .line{ transform:translateX(0%) }
+// }
+
+
+// .icon-xsm{ height:12px; }
+// .icon-sm{ height:18px; width:18px; }
+// .icon-md{ height:25px; width:25px; }
+// .icon-lg{ height:32px; }
+// .box-shadow{
+//   box-shadow: 10px 0px 8px rgb(0, 0, 0,.9);
+// }
+// .box-shadow-glow{
+//   box-shadow: 0px 0px 20px #7FEEF0;
+//   border-radius: 8px;
+// }
+// .pulse{
+//   animation-name: pulse;
+//   animation-duration: 2s;
+//   animation-iteration-count: infinite;
+// }
+// @keyframes pulse {
+//   0%{ box-shadow: 0px 0px 20px rgba(127, 238, 240, 1); }
+//   50%{ box-shadow: 0px 0px 20px rgba(127, 238, 240, .7); }
+//   100%{ box-shadow: 0px 0px 20px rgba(127, 238, 240, 1); }
+// }
+// .box-shadow-inset{
+//   box-shadow: 1px 2px 52px -4px rgba(0,0,0,0.54) inset;
+//   -webkit-box-shadow: 1px 2px 52px -4px rgba(0,0,0,0.54) inset;
+//   -moz-box-shadow: 1px 2px 52px -4px rgba(0,0,0,0.54) inset;
+// }
+// .text-shadow-glow{  text-shadow: 0 0 52px #C6FEFF; }
+// .drop-shadow-glow{ filter: drop-shadow(0 0 2px #C6FEFF) drop-shadow(0 0 8px #C6FEFF); }
+
+
+// //Fade in page - optional
+// // .js-opacity-0{
+// //   opacity:0;
+// // }
+// // .js-fade-in{
+// //   transition: opacity .3s;
+// //   opacity: 1;
+// // }
+// // .js-fade-out{
+// //   transition: opacity .3s;
+// //   opacity: 0;
+// // }
+// // .js-hidden{
+// //   display:none;
+// // }
+// // .js-overflow-hidden{
+// //   overflow:hidden;
+// // }
