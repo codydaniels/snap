@@ -1,10 +1,10 @@
-// $sm:  640px;
-// $md:  768px;
-// $lg:  1024px;
-// $xl:  1280px;
-// $xxl: 1536px;
-// $max: 1600px;
-// $ult: 2800px;
+$sm:  640px;
+$md:  768px;
+$lg:  1024px;
+$xl:  1280px;
+$xxl: 1536px;
+$max: 1600px;
+$ult: 2800px;
 
 // //-- Variables --//
 // :root{
@@ -53,8 +53,8 @@
 // }
 
 // //-- Additional utility classes --//
-// .max-w{ max-width: $max; }
-// .max-w-ult{ max-width: $ult; }
+.max-w{ max-width: $max; }
+.max-w-ult{ max-width: $ult; }
 // @media screen and (min-width: $ult){
 //   .ult-block{ display:block }
 // }

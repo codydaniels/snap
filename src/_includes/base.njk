@@ -69,9 +69,11 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" integrity="sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {# GSAP and (jQuery loaded manually) CDNs #}
-  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous" defer></script>
-  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" defer></script>  #}
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous" ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" ></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" ></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollToPlugin.min.js" ></script> 
 
   {# <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> #}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js" integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -82,16 +84,16 @@
   {{ '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>' if '/admin' in page.url }}
 </head>
 
-<body class="dark:bg-black" x-data={'darkMode': true}>
+<body class="flex justify-center dark:bg-black" x-data={'darkMode': true}>
 
   {# Check current browser size with a media query, for Javascript #}
   {# <div id="getSize"></div> #}
-{# 
+
   <div class="w-full max-w-ult">
-    {% include "header.njk" %} #}
+    {% include "header.njk" %}
     {{ content | safe }}
-    {# {% include "footer.njk" %}
-  </div> #}
+     {% include "footer.njk" %}
+  </div> 
 
   <!-- ====== All Scripts -->
   <script>

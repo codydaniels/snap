@@ -1,5 +1,10 @@
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+function JSscrollTo(div){
+  gsap.to(window, {duration: 1, scrollTo:div});
+}
+
 
 // //Mobile mobileHamburger menu toggle
 // // const mobileHamburger = $('#mobileHamburger');
@@ -908,37 +913,38 @@
 //   });
 
 //   // ====== scroll top js
-//   function scrollTo(element, to = 0, duration = 500) {
-//     const start = element.scrollTop;
-//     const change = to - start;
-//     const increment = 20;
-//     let currentTime = 0;
+  // function scrollTo(element, to = 0, duration = 500) {
+  //   console.log(element, to, duration)
+  //   const start = element.scrollTop;
+  //   const change = to - start;
+  //   const increment = 20;
+  //   let currentTime = 0;
 
-//     const animateScroll = () => {
-//       currentTime += increment;
+  //   const animateScroll = () => {
+  //     currentTime += increment;
 
-//       const val = Math.easeInOutQuad(currentTime, start, change, duration);
+  //     const val = Math.easeInOutQuad(currentTime, start, change, duration);
 
-//       element.scrollTop = val;
+  //     element.scrollTop = val;
 
-//       if (currentTime < duration) {
-//         setTimeout(animateScroll, increment);
-//       }
-//     };
+  //     if (currentTime < duration) {
+  //       setTimeout(animateScroll, increment);
+  //     }
+  //   };
 
-//     animateScroll();
-//   }
+  //   animateScroll();
+  // }
 
-//   Math.easeInOutQuad = function (t, b, c, d) {
-//     t /= d / 2;
-//     if (t < 1) return (c / 2) * t * t + b;
-//     t--;
-//     return (-c / 2) * (t * (t - 2) - 1) + b;
-//   };
+  // Math.easeInOutQuad = function (t, b, c, d) {
+  //   t /= d / 2;
+  //   if (t < 1) return (c / 2) * t * t + b;
+  //   t--;
+  //   return (-c / 2) * (t * (t - 2) - 1) + b;
+  // };
 
-//   document.querySelector('.back-to-top').onclick = () => {
-//     scrollTo(document.documentElement);
-//   };
+  // document.querySelector('.back-to-top').onclick = () => {
+  //   scrollTo(document.documentElement);
+  // };
 // })();
 
 // // Document Loaded
@@ -964,10 +970,8 @@
 var timer = 0;
 var isFixed = false;
 $(window).scroll( function() {
-  console.log(timer)
     if(timer == 0){
       timer = setTimeout(function() {
-        console.log("fire")
         let prevState = isFixed;
         $(window).scrollTop() > 0 ? isFixed = true : isFixed = false;
         if( prevState != isFixed && isFixed == true ){
