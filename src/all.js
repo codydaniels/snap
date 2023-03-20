@@ -966,26 +966,131 @@ function JSscrollTo(div){
   // });
 
 
+// $(document).ready(()=>{
 
-var timer = 0;
-var isFixed = false;
-$(window).scroll( function() {
-    if(timer == 0){
-      timer = setTimeout(function() {
-        let prevState = isFixed;
-        $(window).scrollTop() > 0 ? isFixed = true : isFixed = false;
-        if( prevState != isFixed && isFixed == true ){
-            $("header").addClass("fixed-navbar");
-            $("header").removeClass("absolute");
-        } else if (prevState != isFixed) {
-            $("header").addClass("absolute");
-            $("header").removeClass("fixed-navbar");
-        }
-        timer = 0;
-      }, 100);
-    }else{
-      
+
+
+  //Toggle navbar styles
+  let timer = 0;
+  var isFixed = false;
+  var firstSnap = true;
+  const navbar = $("header")
+
+  //Toggle once on page load
+  toggleStickyNav(0);
+
+  //Toggle on scroll
+  $(window).scroll( function() {
+    if(firstSnap){
+      firstSnap = false;
+      //Toggle instantly on first move
+      toggleStickyNav(0)
+    }else if(timer == 0){
+      //Toggle every 100ms
+      toggleStickyNav(100)
     }
+  });
+
+  //Toggle classes
+  function toggleStickyNav(delay){
+    timer = setTimeout(function() {
+      let prevState = isFixed;
+      $(window).scrollTop() > 0 ? isFixed = true : isFixed = false;
+      if( prevState != isFixed && isFixed == true ){
+          navbar.addClass("fixed-navbar");
+          navbar.removeClass("absolute");
+      } else if (prevState != isFixed) {
+          navbar.addClass("absolute");
+          navbar.removeClass("fixed-navbar");
+      }
+      timer = 0;
+    }, delay);
+  }
+
+  //Mobile menu toggle
+  const mobileNav = {
+    hamburger: $('#navbarToggler'),
+    menu: $('#navbarCollapse')
+  }
+
+  $(document).on('click', (e) => {
+    //Check targets
+    let target = $(e.target);
+    let isHamburger = target.closest(mobileNav.hamburger).length;
+    let isMenu = target.closest(mobileNav.menu).length;
+    let isMenuLink = target.closest($(mobileNav.menu).find("button")).length;
+    if( isHamburger || isMenuLink ) {
+      //Check for on-target clicks
+      mobileNav.hamburger.toggleClass('navbarTogglerActive');
+      mobileNav.menu.toggleClass('hidden');
+      //Check for off-target clicks
+    }else if( isMenu === 0 ) {
+      mobileNav.hamburger.removeClass('navbarTogglerActive');
+      mobileNav.menu.addClass('hidden');
+    }
+  });
 
 
-});
+
+// })
+
+
+const fadeInUp = $(".wow.fadeInUp");
+if(fadeInUp[0]){
+  for(let i=0; i<fadeInUp.length; i++){
+    gsap.set(fadeInUp[i], {opacity:.1, y: 20} )
+    gsap.to(fadeInUp[i], {
+      opacity: 1,
+      y: 0,
+      duration: .5,
+      ease: Power3,
+      scrollTrigger: {
+        trigger: fadeInUp[i],
+        start: "top bottom-=50px",
+        end: "top bottom-=50px",
+        scrub: false
+      }
+    });
+  }
+}
+
+
+
+//Scripts from theme
+// let togglePlan = document.querySelector('#togglePlan');
+// document.querySelector('.monthly').addEventListener('click', () => {
+//   togglePlan.checked = false;
+// });
+// document.querySelector('.yearly').addEventListener('click', () => {
+//   togglePlan.checked = true;
+// });
+// // ==== for menu scroll
+// const pageLink = document.querySelectorAll('.menu-scroll');
+// pageLink.forEach((elem) => {
+//   elem.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     document.querySelector(elem.getAttribute('href')).scrollIntoView({
+//       behavior: 'smooth',
+//       offsetTop: 1 - 60,
+//     });
+//   });
+// });
+// // section menu active
+// function onScroll(event) {
+//   const sections = document.querySelectorAll('.menu-scroll');
+//   const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+//   for (let i = 0; i < sections.length; i++) {
+//     const currLink = sections[i];
+//     const val = currLink.getAttribute('href');
+//     const refElement = document.querySelector(val);
+//     const scrollTopMinus = scrollPos + 73;
+//     if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
+//       document.querySelector('.menu-scroll').classList.remove('active');
+//       currLink.classList.add('active');
+//     } else {
+//       currLink.classList.remove('active');
+//     }
+//   }
+// }
+// window.document.addEventListener('scroll', onScroll);
+

@@ -21,7 +21,7 @@ layout: base.njk
               Book a Call
             </button>
             <button
-              onclick="JSscrollTo('#features')"
+              onclick="JSscrollTo('#cutting-edge')"
               class="text-base font-semibold text-black bg-black bg-opacity-10 dark:text-white dark:bg-white dark:bg-opacity-10 py-4 px-8 hover:bg-opacity-20 dark:hover:bg-opacity-20 mx-2 rounded-md transition duration-300 ease-in-out"
             >
               Learn More
@@ -134,7 +134,7 @@ layout: base.njk
         <div class="mx-auto max-w-[570px] text-center mb-20 wow fadeInUp" data-wow-delay=".1s">
           <h2 class="text-black dark:text-white font-bold text-3xl sm:text-4xl md:text-[45px] mb-4">Cutting-edge Climate Technology</h2>
           <p class="text-body-color text-base md:text-lg leading-relaxed md:leading-relaxed">
-            Discreet, full-spectrum sensors implement the ultimate control capabilities for any facility
+            Discreet, full-spectrum sensors offer unmatched energy savings for any facility
           </p>
         </div>
       </div>
@@ -143,7 +143,8 @@ layout: base.njk
       <div class="w-full px-4">
         <div class="mx-auto max-w-[770px] rounded-md overflow-hidden wow fadeInUp" data-wow-delay=".15s">
           <div class="relative items-center justify-center">
-            <img src="/assets/images/tech/lifestyle-climate-control-sensors-with-active-monitoring.jpg" alt="video image" class="w-full h-full object-cover object-center" />
+            {% imageShortCode { className: "w-full h-full object-cover object-center", sizes: "90vw", imgSrc:  "/assets/images/tech/lifestyle-climate-control-sensors-with-active-monitoring.jpg", alt: "Discreet full-spectrum climate control sensors in the backgorund of a modern rental" } %}
+            {# <img src="/assets/images/tech/lifestyle-climate-control-sensors-with-active-monitoring.jpg" alt="video image" class="w-full h-full object-cover object-center" /> #}
             {# <div class="absolute w-full h-full top-0 right-0 flex items-center justify-center">
               <a
                 href="javascript:void(0)"
@@ -176,7 +177,7 @@ layout: base.njk
         <div class="mx-auto max-w-[570px] text-center mb-[100px] wow fadeInUp" data-wow-delay=".1s">
           <h2 class="text-black dark:text-white font-bold text-3xl sm:text-4xl md:text-[45px] mb-4">Revolutionary Energy Management</h2>
           <p class="text-body-color text-base md:text-lg leading-relaxed md:leading-relaxed">
-            Unmatched energy savings, with cutting-edge climate monitoring and live algorithm-driven controls
+            Start-to-finish expert support, backed by the latest in climate control technology
           </p>
         </div>
       </div>
@@ -464,7 +465,8 @@ layout: base.njk
         </div>
         <div class="w-full lg:w-1/2 px-4">
           <div class="text-center lg:text-right wow fadeInUp" data-wow-delay=".2s">
-            <img src="/assets/images/tech/sensor-controller-for-automated-climate-control.png" alt="about-image" class="max-w-full mx-auto lg:mr-0" />
+            {% imageShortCode { className: "w-[500px] max-w-full mx-auto lg:mr-0", sizes: "90vw", imgSrc:  "/assets/images/tech/sensor-controller-for-automated-climate-control.png", alt: "A smart climate control sensor, fully wireless for remote management" } %}
+            {# <img src="/assets/images/tech/sensor-controller-for-automated-climate-control.png" alt="about-image" class="max-w-full mx-auto lg:mr-0" /> #}
           </div>
         </div>
       </div>
@@ -480,7 +482,8 @@ layout: base.njk
     <div class="flex flex-wrap items-center mx-[-16px]">
       <div class="w-full lg:w-1/2 px-4">
         <div class="text-center lg:text-left mb-12 lg:mb-0 wow fadeInUp" data-wow-delay=".15s">
-          <img src="/assets/images/tech/product-climate-control-monitor-for-automated-management.png" alt="about image" class="max-w-full mx-auto lg:ml-0" />
+          {% imageShortCode { className: "w-[600px] max-w-full mx-auto lg:ml-0", sizes: "90vw", imgSrc:  "/assets/images/tech/product-climate-control-monitor-for-automated-management.png", alt: "Modern climate management motion, humidity and temperature sensors" } %}
+          {# <img src="/assets/images/tech/product-climate-control-monitor-for-automated-management.png" alt="about image" class="max-w-full mx-auto lg:ml-0" /> #}
         </div>
       </div>
       <div class="w-full lg:w-1/2 px-4">
@@ -728,9 +731,9 @@ layout: base.njk
     <div class="flex flex-wrap mx-[-16px]">
       <div class="w-full px-4">
         <div class="mx-auto max-w-[655px] text-center mb-[100px] wow fadeInUp" data-wow-delay=".1s">
-          <h2 class="text-black dark:text-white font-bold text-3xl sm:text-4xl md:text-[45px] mb-4">Select Your Management Plan</h2>
+          <h2 class="text-black dark:text-white font-bold text-3xl sm:text-4xl md:text-[45px] mb-4">Select Your Plan</h2>
           <p class="text-body-color text-base md:text-lg leading-relaxed md:leading-relaxed max-w-[570px] mx-auto">
-            Algorithm-powered automation software and monitoring technology, tailored to meet your unique needs.
+            Algorithm-powered technology at any scale, tailored to meet your unique needs.
           </p>
         </div>
       </div>
@@ -1292,7 +1295,7 @@ layout: base.njk
           "
         >
           <h2 class="font-bold text-black dark:text-white text-2xl sm:text-3xl lg:text-2xl xl:text-3xl mb-3">Contact Us</h2>
-          <p class="text-body-color text-base font-medium mb-12">Reach out to automate your energy savings today!</p>
+          <p class="text-body-color text-base font-medium mb-12">Reach out to ask a question, or schedule a consultation.</p>
           <form>
             <div class="flex flex-wrap mx-[-16px]">
               <div class="w-full md:w-1/2 px-4">
@@ -1331,7 +1334,7 @@ layout: base.njk
                   href="javascript:void(0)"
                   class="text-base font-medium text-white bg-primary py-4 px-9 hover:bg-opacity-80 hover:shadow-signUp rounded-md transition duration-300 ease-in-out"
                 >
-                  Contact Us
+                  Contact
                 </a>
               </div>
             </div>
