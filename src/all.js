@@ -966,7 +966,7 @@ function JSscrollTo(div){
   // });
 
 
-// $(document).ready(()=>{
+$(document).ready(()=>{
 
 
 
@@ -1030,29 +1030,29 @@ function JSscrollTo(div){
     }
   });
 
-
-
-// })
-
-
-const fadeInUp = $(".wow.fadeInUp");
-if(fadeInUp[0]){
-  for(let i=0; i<fadeInUp.length; i++){
-    gsap.set(fadeInUp[i], {opacity:.1, y: 20} )
-    gsap.to(fadeInUp[i], {
-      opacity: 1,
-      y: 0,
-      duration: .5,
-      ease: Power3,
-      scrollTrigger: {
-        trigger: fadeInUp[i],
-        start: "top bottom-=50px",
-        end: "top bottom-=50px",
-        scrub: false
-      }
-    });
+  const fadeInUp = $(".wow.fadeInUp");
+  if(fadeInUp[0]){
+    for(let i=0; i<fadeInUp.length; i++){
+      gsap.set(fadeInUp[i], {opacity:.1, y: 20} )
+      gsap.to(fadeInUp[i], {
+        opacity: 1,
+        y: 0,
+        duration: .5,
+        ease: Power3,
+        scrollTrigger: {
+          trigger: fadeInUp[i],
+          start: "top bottom-=50px",
+          end: "top bottom-=50px",
+          scrub: false
+        }
+      });
+    }
   }
-}
+  
+
+})
+
+
 
 
 
