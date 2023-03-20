@@ -1300,9 +1300,9 @@ layout: base.njk
             <div class="flex flex-wrap mx-[-16px]">
               <div class="w-full md:w-1/2 px-4">
                 <div class="mb-8">
-                  <label for="name" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Name </label>
+                  <label for="form-contact-name" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Name </label>
                   <input
-                    name="name"
+                    id="form-contact-name"
                     type="text"
                     placeholder="Enter your name"
                     class="w-full border border-transparent dark:bg-[#073f4a] rounded-md shadow-one dark:shadow-signUp py-3 px-6 text-body-color text-base placeholder-body-color outline-none focus-visible:shadow-none focus:border-primary"
@@ -1311,9 +1311,9 @@ layout: base.njk
               </div>
               <div class="w-full md:w-1/2 px-4">
                 <div class="mb-8">
-                  <label for="email" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Email </label>
+                  <label for="form-contact-email" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Email </label>
                   <input
-                    name="email"
+                    id="form-contact-email"
                     type="email"
                     placeholder="Enter your email"
                     class="w-full border border-transparent dark:bg-[#073f4a] rounded-md shadow-one dark:shadow-signUp py-3 px-6 text-body-color text-base placeholder-body-color outline-none focus-visible:shadow-none focus:border-primary"
@@ -1322,9 +1322,9 @@ layout: base.njk
               </div>
               <div class="w-full px-4">
                 <div class="mb-8">
-                  <label for="message" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Message </label>
+                  <label for="form-contact-message" class="block text-sm font-medium text-dark dark:text-white mb-3"> Your Message </label>
                   <textarea
-                    name="message"
+                    id="form-contact-message"
                     rows="5"
                     placeholder="Enter your Message"
                     class="w-full border border-transparent dark:bg-[#073f4a] rounded-md shadow-one dark:shadow-signUp py-3 px-6 text-body-color text-base placeholder-body-color outline-none focus-visible:shadow-none focus:border-primary resize-none"
@@ -1356,17 +1356,17 @@ layout: base.njk
             Stay up-to-date on the latest news in energy management, directly from our expert team.
           </p>
           <form>
-            <label for="newsletter-name" class="sr-only">Your Name</label>
+            <label for="form-newsletter-name" class="sr-only">Your Name</label>
             <input
               type="text"
-              name="newsletter-name"
+              id="form-newsletter-name"
               placeholder="Enter your name"
               class="w-full border border-body-color border-opacity-10 dark:border-white dark:border-opacity-10 dark:bg-[#073f4a] rounded-md py-3 px-6 font-medium text-body-color text-base placeholder-body-color outline-none focus-visible:shadow-none focus:border-primary focus:border-opacity-100 mb-4"
             />
-            <label for="newsletter-email" class="sr-only">Your Email</label>
+            <label for="form-newsletter-email" class="sr-only">Your Email</label>
             <input
               type="email"
-              name="newsletter-email"
+              id="form-newsletter-email"
               placeholder="Enter your email"
               class="w-full border border-body-color border-opacity-10 dark:border-white dark:border-opacity-10 dark:bg-[#073f4a] rounded-md py-3 px-6 font-medium text-body-color text-base placeholder-body-color outline-none focus-visible:shadow-none focus:border-primary focus:border-opacity-100 mb-4"
             />
